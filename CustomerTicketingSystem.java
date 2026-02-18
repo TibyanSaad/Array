@@ -20,11 +20,17 @@ public class CustomerTicketingSystem {
         if (updateInput.equals("YES")){
             System.out.println("Enter the index of the ticket to be updated");
             int updateId = customerFeedback.nextInt();
+            customerFeedback.nextLine();
             System.out.println("Ticket to be updated is: " + feedback[updateId]);
-
+            System.out.println("Enter value to be updated");
             String newTicket = customerFeedback.nextLine();
             feedback[updateId] = newTicket;
-            System.out.println("Updated Ticket: " + newTicket);
-        }
+            System.out.println("##########################");
+            System.out.println("UPDATED LIST");
+            for (int currentFeedback = 0; currentFeedback < feedbackNo; currentFeedback++) {
+                System.out.printf("Feedback %d is: %s \n ", currentFeedback, feedback[currentFeedback]);
+            }
+        }System.out.println("Exiting Goodbye!");
+        System.exit(0);
     }
 }
