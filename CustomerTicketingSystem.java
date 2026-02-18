@@ -17,7 +17,7 @@ public class CustomerTicketingSystem {
         System.out.println("type 'YES' or 'NO'");
         String updateInput = customerFeedback.nextLine();
 
-        if (updateInput.equals("YES")){
+        if (updateInput.equals("YES")) {
             System.out.println("Enter the index of the ticket to be updated");
             int updateId = customerFeedback.nextInt();
             customerFeedback.nextLine();
@@ -30,7 +30,24 @@ public class CustomerTicketingSystem {
             for (int currentFeedback = 0; currentFeedback < feedbackNo; currentFeedback++) {
                 System.out.printf("Feedback %d is: %s \n ", currentFeedback, feedback[currentFeedback]);
             }
+        }
+
+        System.out.println("Would you like to delete any of the tickets?");
+        System.out.println("type 'YES' or 'NO'");
+        String deleteInput = customerFeedback.nextLine();
+
+        if (deleteInput.equals("YES")) {
+            System.out.println("Enter the index of the ticket to be deleted");
+            int deleteId = customerFeedback.nextInt();
+            customerFeedback.nextLine();
+            System.out.println("Ticket to be deleted is: " + feedback[deleteId]);
+
+            feedback[deleteId] = null;
+            System.out.println("##########################");
+            System.out.println("DELETED LIST");
+            for (int currentFeedback = 0; currentFeedback < feedbackNo; currentFeedback++) {
+                System.out.printf("Feedback %d is: %s \n ", currentFeedback, feedback[currentFeedback]);
+            }
         }System.out.println("Exiting Goodbye!");
-        System.exit(0);
     }
 }
